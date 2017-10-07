@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/content/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,6 +41,12 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")    
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script> @* Script para manejo de mensajes de Error *@
+    <script src="~/scripts/datatables/jquery.datatables.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
