@@ -13,7 +13,7 @@ namespace InscripcionSolution.Controllers
         public ActionResult Index()
         {
             //InscripcionContext DB = new InscripcionContext();
-            using (var db = new InscripcionContext())
+            using (var db = new InscripcionContext()) // con el Using se evita dejar conexiones a la Bd abiertas
             {
                 return View(db.Estudiante.ToList());
             }
