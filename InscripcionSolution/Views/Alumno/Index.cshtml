@@ -5,7 +5,7 @@
     
 }
 
-<h2>Index</h2>
+<h2>Lista de Alumnos</h2>
 
 <p>
     @Html.ActionLink("Crear Nuevo Alumno", "Create")
@@ -13,10 +13,20 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre)
+          @*@Html.DisplayNameFor(model => model.Nombre*@ @*Muestra los nombres de las columnas de la clase parcial definidas*@
+            Nombre Completo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido)
+          @*@Html.DisplayNameFor(model => model.Edad)*@
+            Edad
+        </th>
+        <th>
+          @*@Html.DisplayNameFor(model => model.Sexo)*@
+            Sexo
+        </th>
+        <th>
+          @* @Html.DisplayNameFor(model => model.FechaNacimiento)*@
+            Fecha de Nacimiento
         </th>
         <th></th>
     </tr>
@@ -24,10 +34,28 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
+            @Html.DisplayFor(modelItem => item.NombreCompleto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Apellido)
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @{
+                if(item.Sexo == "M")
+                {
+                    <span>Masculino</span>
+
+                }
+                else
+                {
+                    <span>Femenino</span>
+                }
+
+            }
+            
+        </td>
+        <td>
+            @item.FechaNacimiento.ToShortDateString();
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

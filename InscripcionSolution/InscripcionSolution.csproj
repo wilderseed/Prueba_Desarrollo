@@ -169,6 +169,7 @@
     <Compile Include="Models\Estudiante.cs">
       <DependentUpon>InscripcionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EstudianteCE.cs" />
     <Compile Include="Models\InscripcionModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -247,6 +248,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
