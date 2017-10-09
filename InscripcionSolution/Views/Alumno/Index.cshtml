@@ -61,12 +61,25 @@
                     @item.FechaNacimiento.ToShortDateString();
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Detalles", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "aElimina" })
                 </td>
             </tr>
-                        }
+          }
     </tbody>
 
 </table>
+
+@*Seccion, codigo y Script para preguntar si se desea eliminar un registro de la bd*@
+@section scripts{
+    <script>
+        $(".aElimina").click(function (event) {
+            if (!confirm('Estas Seguro de Eliminar el Alumno??')) {
+                event.preventDefault();
+            }
+
+        });
+    </script>
+    
+}
